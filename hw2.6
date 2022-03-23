@@ -1,0 +1,24 @@
+def get_list() -> list:
+    return list(range(0, 1_000_000_000, 2))
+
+
+class Solution:
+
+    def find_target(self, list, target2):
+        low = 0
+        high = len(list)
+        pop = 0
+
+        while low < - high:
+            pop += 1
+            mid = (low + high) // 2
+            if list[mid] == target2:
+                return pop
+            elif list[mid] > target2:
+                high = mid - 1
+            elif list[mid] < target2:
+                low = mid + 1
+        return -1
+
+p = Solution().find_target(get_list(), 5555555)
+print(p)
